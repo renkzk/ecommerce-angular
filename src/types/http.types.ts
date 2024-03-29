@@ -6,7 +6,7 @@ export interface HttpOptions {
     | {
         [header: string]: string | string[];
       };
-  observe: 'body';
+  observe?: 'body';
   context?: HttpContext;
   params?:
     | HttpParams
@@ -25,4 +25,14 @@ export interface HttpOptions {
         includeHeaders?: string[];
       }
     | boolean;
+}
+
+export interface PaginationParams {
+  [param: string]:
+    | string
+    | number
+    | boolean
+    | ReadonlyArray<string | number | boolean>;
+  page: number;
+  perPage: number;
 }
